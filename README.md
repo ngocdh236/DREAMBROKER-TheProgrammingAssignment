@@ -10,7 +10,7 @@ Endpoint: https://db-text-analyzing.herokuapp.com
 
 - Clean code
 - Unit testing
-- CI 
+- CI
 
 ## Language
 
@@ -27,17 +27,18 @@ Endpoint: https://db-text-analyzing.herokuapp.com
 
 ## Installation
 
-  `npm install`
+`npm install`
 
-  `npm run dev`
+`npm run dev`
 
 ## Specification
 
 ### /analyze endpoint
+
 This endpoint is an example of text analyzing
 
 ```http
-GET http://localhost:5000/analyze
+POST http://localhost:5000/analyze
 
 Content-type: application/json;
 
@@ -54,7 +55,7 @@ Response:
   },
   "wordCount": 1,
   "characterCount": [
-    { 
+    {
       "h": 1
     },
     {
@@ -63,6 +64,7 @@ Response:
   ]
 }
 ```
+
 ## Author
 
 - Ngoc Doan (ngocdh236@gmail.com)
