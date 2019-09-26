@@ -3,6 +3,6 @@ const Controller = require('../controllers/Analyze.controller');
 
 const router = express.Router();
 
-router.route('/').get(Controller.analyze);
+router.route('/').post(Controller.analyze);
 
 module.exports = router;
