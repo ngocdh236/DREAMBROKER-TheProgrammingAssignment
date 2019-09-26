@@ -22,7 +22,7 @@ exports.analyzeText = text => {
 
   const wordCount = newText
     .split(' ')
-    .filter(word => word.length > 0 && word.match(/[a-z]/i)).length; // Exclude marks
+    .filter(word => word.length > 0 && word.match(/[a-z0-9]/i)).length; // Exclude marks
 
   const uniqueCharacters = characters
     .reduce((letters, character) => {

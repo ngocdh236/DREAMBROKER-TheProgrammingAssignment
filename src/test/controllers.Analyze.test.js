@@ -46,7 +46,7 @@ describe('Test analyze controller', () => {
               withSpaces: 15,
               withoutSpaces: 11
             },
-            wordCount: 2,
+            wordCount: 3,
             characterCount: [
               {
                 e: 2
