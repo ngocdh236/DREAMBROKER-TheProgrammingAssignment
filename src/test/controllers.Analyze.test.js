@@ -10,18 +10,25 @@ describe('Test analyze controller', () => {
 
   describe('Test analyze', () => {
     describe('Test empty text', () => {
-      it('Should return status 400', done => {
+      it('Should return status 200', done => {
         const req = {
           body: { text: '' }
         };
 
         res.status = arg => {
-          expect(arg).to.deep.equal(400);
+          expect(arg).to.deep.equal(200);
           return res;
         };
 
         res.json = arg => {
-          expect(arg).to.deep.equal({ error: 'Text should not be empty' });
+          expect(arg).to.deep.equal({
+            textLength: {
+              withSpaces: 0,
+              withoutSpaces: 0
+            },
+            wordCount: 0,
+            characterCount: []
+          });
           done();
         };
 
@@ -30,7 +37,7 @@ describe('Test analyze controller', () => {
     });
 
     describe('Test text', () => {
-      it('Should return status 400', done => {
+      it('Should return status 200', done => {
         const req = {
           body: { text: 'Hello 2 times  ' }
         };
