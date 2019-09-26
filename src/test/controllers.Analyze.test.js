@@ -1,5 +1,4 @@
 const chai = require('chai');
-const sinon = require('sinon');
 const Controller = require('../controllers/Analyze.controller');
 
 const { expect } = chai;
