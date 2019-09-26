@@ -1,8 +1,5 @@
-const analyzeText = (req, res) => {
-  const { text } = req.body;
-
+exports.analyzeText = text => {
   const englishLetters = 'abcdefghijklmnopqrstuvwxyz'.split('');
-  const specialCharacters = '`~!@#$%^&*()-_=+[{]}\\|;:\'",<.>/?'.split('');
 
   const characters = text.toLowerCase().split('');
 
@@ -17,7 +14,7 @@ const analyzeText = (req, res) => {
   var newText = text;
   newText = newText.replace(/!/g, ' ');
   newText = newText.replace(/;/g, ' ');
-  newText = newText.replace(/;/g, ' ');
+  newText = newText.replace(/:/g, ' ');
   newText = newText.replace(/,/g, ' ');
   newText = newText.replace(/\./g, ' ');
   newText = newText.replace(/\//g, ' ');
@@ -25,8 +22,7 @@ const analyzeText = (req, res) => {
 
   const wordCount = newText
     .split(' ')
-    .filter(word => !specialCharacters.includes(word) && word.length > 0) // Exclude marks
-    .length;
+    .filter(word => word.length > 0 && word.match(/[a-z]/i)).length; // Exclude marks
 
   const uniqueCharacters = characters
     .reduce((letters, character) => {
@@ -39,17 +35,18 @@ const analyzeText = (req, res) => {
 
   const characterCount = uniqueCharacters.map(character =>
     JSON.parse(
-      `{"${character}":"${
+      `{"${character}":${
         characters.filter(element => element === character).length
-      }"}`
+      }}`
     )
   );
 
-  return res.json({
+  console.log(characterCount);
+  console.log(newText);
+
+  return {
     textLength: { withSpaces, withoutSpaces },
     wordCount,
     characterCount
-  });
+  };
 };
-
-module.exports = { analyzeText };

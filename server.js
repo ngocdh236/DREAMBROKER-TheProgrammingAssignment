@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
   res.send('Hello World');
 });
 
-app.use('/analyze', require('./routes/analyze'));
+app.use('/analyze', require('./src/routers/analyze.router'));
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server running on port ${port}`));
