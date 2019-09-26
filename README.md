@@ -2,7 +2,7 @@
 
 > An endpoint to analyze text
 
-[Demo](https://documenter.getpostman.com/view/1649848/SVn2Pvoq?version=latest?target=_blank)
+[Demo](https://documenter.getpostman.com/view/1649848/SVn2Pvoq?version=latest)
 
 Endpoint: https://db-text-analyzing.herokuapp.com
 
