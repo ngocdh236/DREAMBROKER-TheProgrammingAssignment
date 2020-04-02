@@ -1,4 +1,4 @@
-# DREAMBROKER-TheProgrammingAssignment
+# Text analyze endpoint
 
 > An endpoint to analyze text
 
